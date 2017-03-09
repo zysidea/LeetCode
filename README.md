@@ -11,3 +11,19 @@ func hammingDistance(x int, y int) int {
 	return res
 }
 ```
+### Number Complement 
+```go
+func findComplement(num int) int {
+	numBinary := strconv.FormatInt(int64(num), 2)
+	var conv []string
+	numSlice := numBinary[0:]
+	for _, value := range numSlice {
+		temp := (value - 48) ^ 1
+		tempStr := strconv.Itoa(int(temp))
+		conv = append(conv, tempStr)
+	}
+	str := strings.Join(conv, "")
+	res, _ := strconv.ParseInt(str, 2, 64)
+	return int(res)
+}
+```
