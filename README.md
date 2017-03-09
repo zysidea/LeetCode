@@ -12,6 +12,7 @@ func hammingDistance(x int, y int) int {
 }
 ```
 ### Number Complement 
+转化成2进制字符串，每一个字符的整数都跟1异或，在转化为int
 ```go
 func findComplement(num int) int {
 	numBinary := strconv.FormatInt(int64(num), 2)
