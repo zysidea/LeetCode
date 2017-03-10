@@ -24,11 +24,15 @@ var (
 func findWords(words []string) []string {
 	var result []string
 	for _, v1 := range words {
-		if match(v1, firstKey) && !match(v1, secondKey) && !match(v1, thirdKey) {
+		match1 := match(v1, firstKey)
+		match2 := match(v1, secondKey)
+		match3 := match(v1, thirdKey)
+
+		if match1 && !match2 && !match3 {
 			result = append(result, v1)
-		} else if !match(v1, firstKey) && match(v1, secondKey) && !match(v1, thirdKey) {
+		} else if !match1 && match2 && !match3 {
 			result = append(result, v1)
-		} else if !match(v1, firstKey) && !match(v1, secondKey) && match(v1, thirdKey) {
+		} else if !match1 && !match2 && match3 {
 			result = append(result, v1)
 		} else {
 			continue
